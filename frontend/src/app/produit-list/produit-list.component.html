@@ -6,6 +6,7 @@
             <p class="product-info libelle"><b>{{ item.libelle }}</b></p>
             <p class="product-info reference">Référence: {{ item.ref }}</p>
             <p class="product-info prix">Prix: {{ item.prix }}€</p>
+            <button class="product-add-to-cart" (click)="addToCart(item)">Ajouter au panier</button>
         </div> 
     </div>
 </main>
