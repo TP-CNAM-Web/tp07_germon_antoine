@@ -6,11 +6,10 @@ import { RechercheComponent } from '../recherche/recherche.component';
 import { ProduitListComponent } from '../produit-list/produit-list.component';
 
 @Component({
-  selector: 'app-boutique',
-  standalone: true,
-  imports: [RechercheComponent, ProduitListComponent],
-  templateUrl: './boutique.component.html',
-  styleUrl: './boutique.component.css'
+    selector: 'app-boutique',
+    imports: [RechercheComponent, ProduitListComponent],
+    templateUrl: './boutique.component.html',
+    styleUrl: './boutique.component.css'
 })
 export class BoutiqueComponent implements OnInit {
   produits: Produit[] = [];

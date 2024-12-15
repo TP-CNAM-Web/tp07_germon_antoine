@@ -2,11 +2,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-recherche',
-  standalone: true,
-  imports: [FormsModule],
-  templateUrl: './recherche.component.html',
-  styleUrl: './recherche.component.css'
+    selector: 'app-recherche',
+    imports: [FormsModule],
+    templateUrl: './recherche.component.html',
+    styleUrl: './recherche.component.css'
 })
 export class RechercheComponent {
     refFiltre: string = '';
