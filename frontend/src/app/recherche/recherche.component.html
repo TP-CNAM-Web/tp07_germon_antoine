@@ -1,0 +1,14 @@
+<div class="filter-input-container">
+    <label class="filter-input">
+        <span>Référence :</span>
+        <input type="text" [(ngModel)]="refFiltre" (input)="mettreAJourFiltre()" placeholder="Référence">
+    </label>
+    <label class="filter-input">
+        <span>Libellé :</span>
+        <input type="text" [(ngModel)]="libelleFiltre" (input)="mettreAJourFiltre()" placeholder="Libellé">
+    </label>
+    <label class="filter-input">
+        <span>Prix maximum :</span>
+        <input type="number" [(ngModel)]="prixMaxFiltre" (input)="mettreAJourFiltre()" placeholder="Prix maximum">
+    </label>
+</div>

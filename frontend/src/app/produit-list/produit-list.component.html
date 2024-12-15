@@ -1,0 +1,11 @@
+<main>
+    <h2>Liste des produits de la boutique:</h2>
+
+    <div class="product-list">
+        <div class="product-container" *ngFor="let item of produits">
+            <p class="product-info libelle"><b>{{ item.libelle }}</b></p>
+            <p class="product-info reference">Référence: {{ item.ref }}</p>
+            <p class="product-info prix">Prix: {{ item.prix }}€</p>
+        </div> 
+    </div>
+</main>

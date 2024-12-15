@@ -1,0 +1,19 @@
+.filter-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: #090909;
+    padding: 1rem;
+}
+
+.filter-input {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.filter-input span {
+    /* center text vertically in span */
+    display: flex;
+    align-items: center;
+}

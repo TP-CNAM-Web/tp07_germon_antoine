@@ -1,0 +1,33 @@
+main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 3rem;
+}
+
+.product-container {
+    width: 10rem;
+    background-color: #121212;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.product-info {
+    color: white;
+    text-align: center;
+    margin: 0;
+}
