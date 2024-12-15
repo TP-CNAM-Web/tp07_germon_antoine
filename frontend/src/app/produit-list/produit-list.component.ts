@@ -5,11 +5,10 @@ import { Store } from '@ngxs/store';
 import { AddToCart } from '../cart/cart.actions';
 
 @Component({
-  selector: 'app-produit-list',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './produit-list.component.html',
-  styleUrl: './produit-list.component.css'
+    selector: 'app-produit-list',
+    imports: [CommonModule],
+    templateUrl: './produit-list.component.html',
+    styleUrl: './produit-list.component.css'
 })
 export class ProduitListComponent {
     @Input() produits: Produit[] = [];
