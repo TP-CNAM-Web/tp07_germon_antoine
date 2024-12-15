@@ -1,0 +1,14 @@
+<main>
+    <h2>Panier</h2>
+    <div *ngIf="cartItems$ | async as cartItems; else emptyCart">
+      <div *ngFor="let item of cartItems" class="cart-item">
+        <p class="cart-item-info libelle"><b>{{ item.libelle }}</b></p>
+        <p class="cart-item-info reference">Référence: {{ item.ref }}</p>
+        <p class="cart-item-info prix">Prix: {{ item.prix }}€</p>
+        <button class="cart-item-remove" (click)="removeFromCart(item)">Retirer du panier</button>
+      </div>
+    </div>
+    <ng-template #emptyCart>
+      <p>Votre panier est vide.</p>
+    </ng-template>
+  </main>

@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { BoutiqueComponent } from './boutique/boutique.component';
+import { TetiereComponent } from './tetiere/tetiere.component';
 
 @Component({
     selector: 'app-root',
-    imports: [RouterOutlet, BoutiqueComponent],
+    imports: [RouterOutlet, TetiereComponent],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'tp03_germon_antoine';
+    title = 'tp03_germon_antoine';
 }
