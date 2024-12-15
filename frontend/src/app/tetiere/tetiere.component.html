@@ -1,3 +1,10 @@
-<div>
-    <p>Number of items in cart: {{ itemCount$ | async }}</p>
-</div>
+<header>
+    <nav>
+        <a routerLink="/boutique" routerLinkActive="active-link">Boutique</a>
+        <a routerLink="/cart" routerLinkActive="active-link">Panier</a>
+    </nav>
+    <a class="cart-icon-container" routerLink="/cart">
+        <span [ngClass]="{'visible': (getItemCount(itemCount$ | async) > 0)}" class="cart-size">{{ getItemCount(itemCount$ | async) }}</span>
+        <img src="../../assets/images/shopping-cart.png" alt="cart" />
+    </a>
+</header>

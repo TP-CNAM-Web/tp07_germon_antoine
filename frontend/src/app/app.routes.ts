@@ -5,5 +5,5 @@ import { CartComponent } from './cart/cart.component';
 export const routes: Routes = [
     {path : 'boutique', component : BoutiqueComponent},
     {path : 'cart', component : CartComponent},
-    {path : '**', component : BoutiqueComponent}
+    {path: '**', redirectTo: 'boutique'}
 ];

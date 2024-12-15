@@ -1,6 +1,6 @@
 .filter-input-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 2rem;
     background-color: #090909;
     padding: 1rem;
