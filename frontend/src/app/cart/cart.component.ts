@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { Store } from '@ngxs/store';
 import { Observable, of } from 'rxjs';
 import { Produit } from '../models/produit';
-import { CartState } from './cart.state';
-import { AddToCart, RemoveFromCart } from './cart.actions';
+import { CartState } from '../states/cart.states';
+import { AddToCart, RemoveFromCart } from '../actions/cart.actions';
 import { CommonModule } from '@angular/common';
 import { map } from 'rxjs/operators';
 

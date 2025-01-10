@@ -39,6 +39,13 @@ nav a.active-link {
     color: white;
 }
 
+.header-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
 .cart-icon-container {
     position: relative;
     cursor: pointer;

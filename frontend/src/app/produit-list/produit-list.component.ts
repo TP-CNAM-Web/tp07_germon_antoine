@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Produit } from '../models/produit';
 import { CommonModule } from '@angular/common';
 import { Store } from '@ngxs/store';
-import { AddToCart } from '../cart/cart.actions';
+import { AddToCart } from '../actions/cart.actions';
 
 @Component({
     selector: 'app-produit-list',
@@ -11,7 +11,7 @@ import { AddToCart } from '../cart/cart.actions';
     styleUrl: './produit-list.component.css'
 })
 export class ProduitListComponent {
-    @Input() produits: Produit[] = [];
+    @Input() products: Produit[] = [];
 
     constructor(private store: Store) {}
 

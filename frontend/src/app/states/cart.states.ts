@@ -1,6 +1,7 @@
 import { State, Action, StateContext, Selector } from '@ngxs/store';
-import { AddToCart, RemoveFromCart } from './cart.actions';
+import { AddToCart, RemoveFromCart } from '../actions/cart.actions';
 import { Produit } from '../models/produit';
+import { Injectable } from '@angular/core';
 
 export interface CartStateModel {
     items: Produit[];
@@ -12,6 +13,7 @@ export interface CartStateModel {
         items: []
     }
 })
+@Injectable()
 export class CartState {
     @Selector()
     static getItems(state: CartStateModel) {

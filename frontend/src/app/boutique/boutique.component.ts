@@ -12,17 +12,17 @@ import { ProduitListComponent } from '../produit-list/produit-list.component';
     styleUrl: './boutique.component.css'
 })
 export class BoutiqueComponent implements OnInit {
-  produits: Produit[] = [];
-  produitsFiltres: Produit[] = [];
+  products: Produit[] = [];
+  productsFiltres: Produit[] = [];
   filtre: { ref: string; libelle: string; prixMax: number | null } = { ref: '', libelle: '', prixMax: null };
   subscriber: any;
 
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    // On récupère les produits une fois au chargement
-    this.subscriber = this.apiService.getProduits().subscribe(produits => {
-      this.produits = produits;
+    // On récupère les products une fois au chargement
+    this.subscriber = this.apiService.getProducts().subscribe(products => {
+      this.products = products;
       this.appliquerFiltre(); // On applique un premier filtre
     });
   }
@@ -39,8 +39,8 @@ export class BoutiqueComponent implements OnInit {
   }
 
   appliquerFiltre() {
-    // Filtre les produits en fonction des critères actuels
-    this.produitsFiltres = this.produits.filter(produit =>
+    // Filtre les products en fonction des critères actuels
+    this.productsFiltres = this.products.filter(produit =>
       (this.filtre.ref ? produit.ref.toLowerCase().includes(this.filtre.ref.toLowerCase()) : true) &&
       (this.filtre.libelle ? produit.libelle.toLowerCase().includes(this.filtre.libelle.toLowerCase()) : true) &&
       (this.filtre.prixMax !== null ? produit.prix <= this.filtre.prixMax : true)
