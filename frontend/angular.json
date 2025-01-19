@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "tp06_germon_antoine": {
+    "tp07_germon_antoine": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/tp06_germon_antoine",
+            "outputPath": "dist/tp07_germon_antoine",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -57,10 +57,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "tp06_germon_antoine:build:production"
+              "buildTarget": "tp07_germon_antoine:build:production"
             },
             "development": {
-              "buildTarget": "tp06_germon_antoine:build:development"
+              "buildTarget": "tp07_germon_antoine:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -68,7 +68,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "tp06_germon_antoine:build"
+            "buildTarget": "tp07_germon_antoine:build"
           }
         },
         "test": {
