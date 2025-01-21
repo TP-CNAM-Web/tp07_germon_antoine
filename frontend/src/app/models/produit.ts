@@ -1,6 +1,5 @@
 export class Produit {
-    ref : string = "No ref";
+    reference : string = "No reference";
     prix : number = 0;
     libelle : string = "No description";
-    tags : string[] = [];
 }

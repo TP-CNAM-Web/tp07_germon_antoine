@@ -14,7 +14,7 @@ import { ProduitListComponent } from '../produit-list/produit-list.component';
 export class BoutiqueComponent implements OnInit {
   products: Produit[] = [];
   productsFiltres: Produit[] = [];
-  filtre: { ref: string; libelle: string; prixMax: number | null } = { ref: '', libelle: '', prixMax: null };
+  filtre: { reference: string; libelle: string; prixMax: number | null } = { reference: '', libelle: '', prixMax: null };
   subscriber: any;
 
   constructor(private apiService: ApiService) { }
@@ -32,7 +32,7 @@ export class BoutiqueComponent implements OnInit {
     this.subscriber.unsubscribe();
   }
 
-  mettreAJourFiltre(nouveauFiltre: { ref: string; libelle: string; prixMax: number | null }) {
+  mettreAJourFiltre(nouveauFiltre: { reference: string; libelle: string; prixMax: number | null }) {
     // Met à jour le filtre en fonction des valeurs reçues du composant enfant
     this.filtre = nouveauFiltre;
     this.appliquerFiltre();
@@ -41,7 +41,7 @@ export class BoutiqueComponent implements OnInit {
   appliquerFiltre() {
     // Filtre les products en fonction des critères actuels
     this.productsFiltres = this.products.filter(produit =>
-      (this.filtre.ref ? produit.ref.toLowerCase().includes(this.filtre.ref.toLowerCase()) : true) &&
+      (this.filtre.reference ? produit.reference.toLowerCase().includes(this.filtre.reference.toLowerCase()) : true) &&
       (this.filtre.libelle ? produit.libelle.toLowerCase().includes(this.filtre.libelle.toLowerCase()) : true) &&
       (this.filtre.prixMax !== null ? produit.prix <= this.filtre.prixMax : true)
     );

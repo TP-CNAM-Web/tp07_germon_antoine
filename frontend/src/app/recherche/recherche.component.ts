@@ -12,12 +12,12 @@ export class RechercheComponent {
     libelleFiltre: string = '';
     prixMaxFiltre: number | null = null;
   
-    @Output() filtreChange = new EventEmitter<{ ref: string; libelle: string; prixMax: number | null }>();
+    @Output() filtreChange = new EventEmitter<{ reference: string; libelle: string; prixMax: number | null }>();
   
     mettreAJourFiltre() {
       // Emet les critères de filtrage actuels au composant parent
       this.filtreChange.emit({
-        ref: this.refFiltre,
+        reference: this.refFiltre,
         libelle: this.libelleFiltre,
         prixMax: this.prixMaxFiltre
       });

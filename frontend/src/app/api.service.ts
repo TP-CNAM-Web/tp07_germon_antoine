@@ -15,13 +15,13 @@ export class ApiService {
         return this.http.get<Produit[]>(environment.backendProduit);
     }
 
-    public register(email: string, username: string, password: string): Observable<any> {
-        const body = { email, username, password };
+    public register(login: string, pass: string): Observable<any> {
+        const body = { login, pass };
         return this.http.post(environment.backendRegister, body);
     }
     
-    public login(email: string, password: string): Observable<any> {
-        const body = { email, password };
+    public login(login: string, pass: string): Observable<any> {
+        const body = { login, pass };
         return this.http.post(environment.backendLogin, body);
     }
     

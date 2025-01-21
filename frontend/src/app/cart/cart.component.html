@@ -4,7 +4,7 @@
         <div *ngIf="cartItems.length > 0; else emptyCart">
             <div *ngFor="let item of cartItems" class="cart-item">
                 <p class="cart-item-info libelle"><b>{{ item.produit.libelle }}</b></p>
-                <p class="cart-item-info reference">Référence: {{ item.produit.ref }}</p>
+                <p class="cart-item-info reference">Référence: {{ item.produit.reference }}</p>
                 <p class="cart-item-info prix">Prix: {{ item.produit.prix }}€</p>
                 <p class="cart-item-info quantity">Quantité: {{ item.quantity }}</p>
                 <div class="cart-item-actions">

@@ -15,9 +15,8 @@ import { UserState } from '../states/user.states';
   styleUrl: './authentication.component.css'
 })
 export class AuthenticationComponent implements OnInit {
-    email = '';
-    password = '';
-    username = '';
+    pass = '';
+    login = '';
     isRegisterMode = false;
     isAuthenticated = false; // Track authentication state
     displayUsername$: Observable<string>;
@@ -25,12 +24,11 @@ export class AuthenticationComponent implements OnInit {
     ngOnInit(): void {
         // Check if the user is already authenticated
         const accessToken = localStorage.getItem('accessToken');
-        const refreshToken = localStorage.getItem('refreshToken');
-        if (accessToken && refreshToken) {
+        if (accessToken) {
             this.apiService.getCurrentUser().subscribe(
                 (user: any) => {
                     this.isAuthenticated = true;
-                    this.store.dispatch(new UpdateUsername(user.username));
+                    this.store.dispatch(new UpdateUsername(user.login));
                 },
                 (error) => {
                     console.error('Error loading user info:', error)
@@ -49,7 +47,7 @@ export class AuthenticationComponent implements OnInit {
 
     authenticate() {
         if (this.isRegisterMode) {
-            this.apiService.register(this.email, this.username, this.password).subscribe(
+            this.apiService.register(this.login, this.pass).subscribe(
                 (response) => {
                     console.log('Registered:', response);
                     alert('Registration successful! Please log in.');
@@ -59,24 +57,23 @@ export class AuthenticationComponent implements OnInit {
             );
         }
         else {
-            this.apiService.login(this.email, this.password).subscribe(
+            this.apiService.login(this.login, this.pass).subscribe(
                 (response: any) => {
                     console.log('Logged in:', response);
                     this.isAuthenticated = true;
-                    console.log('User username:', response.username);
-                    this.store.dispatch(new UpdateUsername(response.username));
+                    console.log('User login:', response.login);
+                    this.store.dispatch(new UpdateUsername(response.login));
                     // put the access token in the local storage
-                    localStorage.setItem('accessToken', response.tokens.accessToken);
-                    localStorage.setItem('refreshToken', response.tokens.refreshToken);
+                    localStorage.setItem('accessToken', response.accessToken.accessToken);
                 },
                 (error) => {
                     console.error('Error:', error);
                     switch (error.status) {
                         case 401:
-                            alert('Email or password incorrect');
+                            alert('Login or password incorrect');
                             break;
                         default:
-                            alert('An error occurred, probably a charly error');
+                            alert('An error occurred, bruh moment');
                     }
                 }
             );
@@ -85,9 +82,8 @@ export class AuthenticationComponent implements OnInit {
 
     logout() {
         this.isAuthenticated = false;
-        this.email = '';
-        this.password = '';
-        this.username = '';
+        this.pass = '';
+        this.login = '';
         this.store.dispatch(new UpdateUsername(''));
         localStorage.removeItem('accessToken');
         localStorage.removeItem('refreshToken');

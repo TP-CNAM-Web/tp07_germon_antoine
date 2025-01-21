@@ -13,8 +13,7 @@ import { Store } from '@ngxs/store';
     styleUrl: './account.component.css'
 })
 export class AccountComponent implements OnInit {
-    email = '';
-    username = '';
+    login = '';
     isEditing = false;
 
     constructor(private apiService: ApiService, private store: Store) {}
@@ -28,21 +27,20 @@ export class AccountComponent implements OnInit {
         // Fetch user info (mocked or real, replace with actual API call)
         this.apiService.getCurrentUser().subscribe(
             (user: any) => {
-                this.email = user.email;
-                this.username = user.username;
+                this.login = user.login;
             },
             (error) => console.error('Error loading user info:', error)
         );
     }
 
     saveChanges() {
-        const updatedUser = { email: this.email, username: this.username };
+        const updatedUser = { login: this.login };
         this.apiService.updateUser(updatedUser).subscribe(
             (response) => {
                 console.log('User updated successfully:', response);
                 alert('User information updated!');
                 this.isEditing = false;
-                this.store.dispatch(new UpdateUsername(this.username));
+                this.store.dispatch(new UpdateUsername(this.login));
             },
             (error) => console.error('Error updating user info:', error)
         );

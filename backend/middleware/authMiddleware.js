@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const SECRET_KEY = 'HELLOHELLOHELLO';
+const { ACCESS_TOKEN_SECRET } = require("../config.js");
 
 module.exports = {
     authenticate: (req, res, next) => {
@@ -11,7 +11,7 @@ module.exports = {
         else {
             try {
                 let jwtBearer = token.split(' ')[1];
-                const decoded = jwt.verify(jwtBearer, SECRET_KEY);
+                const decoded = jwt.verify(jwtBearer, ACCESS_TOKEN_SECRET);
                 req.user = decoded;
 
             } catch (err) {

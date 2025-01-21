@@ -37,9 +37,9 @@ export class CartState {
     remove({ getState, patchState }: StateContext<CartStateModel>, { payload, quantity }: RemoveFromCart) {
         const state = getState();
         const items = [...state.items];
-        const index = items.findIndex(item => item.ref === payload.ref);
+        const index = items.findIndex(item => item.reference === payload.reference);
         if (index !== -1) {
-            if (quantity >= items.filter(item => item.ref === payload.ref).length) {
+            if (quantity >= items.filter(item => item.reference === payload.reference).length) {
                 items.splice(index, 1);
             } else {
                 items.splice(index, quantity);

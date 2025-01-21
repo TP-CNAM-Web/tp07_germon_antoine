@@ -20,12 +20,12 @@ export class CartComponent {
     constructor(private store: Store) {
         this.cartItems$ = this.store.select(CartState.getItems).pipe(
             map(items => {
-                const groupedItems: { [ref: string]: { produit: Produit, quantity: number } } = {};
+                const groupedItems: { [reference: string]: { produit: Produit, quantity: number } } = {};
                 items.forEach(item => {
-                    if (groupedItems[item.ref]) {
-                        groupedItems[item.ref].quantity++;
+                    if (groupedItems[item.reference]) {
+                        groupedItems[item.reference].quantity++;
                     } else {
-                        groupedItems[item.ref] = { produit: item, quantity: 1 };
+                        groupedItems[item.reference] = { produit: item, quantity: 1 };
                     }
                 });
                 return Object.values(groupedItems);

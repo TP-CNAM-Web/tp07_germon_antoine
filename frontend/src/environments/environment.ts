@@ -1,9 +1,9 @@
-let rootUrl = 'http://localhost:5002/'
+let rootUrl = 'https://cnamapp-roqi.onrender.com/'
 
 export const environment = {
     production: false,
-    backendProduit: rootUrl + 'api/products',
-    backendRegister: rootUrl + 'api/users/register',
-    backendLogin: rootUrl + 'api/users/login',
-    backendUser: rootUrl + 'api/users/user',
+    backendProduit: rootUrl + 'api/catalogue',
+    backendRegister: rootUrl + 'api/utilisateur/register',
+    backendLogin: rootUrl + 'api/utilisateur/login',
+    backendUser: rootUrl + 'api/utilisateur/user',
 };

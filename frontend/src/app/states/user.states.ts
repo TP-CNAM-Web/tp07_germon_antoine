@@ -3,13 +3,13 @@ import { UpdateUsername } from '../actions/user.actions';
 import { Injectable } from '@angular/core';
 
 export class UserStateModel {
-    username: string = 'not connected';
+    login: string = 'not connected';
 }
 
 @State<UserStateModel>({
     name: 'user',
     defaults: {
-        username: 'not connected',
+        login: 'not connected',
     },
 })
 @Injectable()
@@ -17,11 +17,11 @@ export class UserState {
     
     @Selector()
     static getUsername(state: UserStateModel) {
-        return state.username;
+        return state.login;
     }
 
     @Action(UpdateUsername)
     updateUsername({ patchState }: StateContext<UserStateModel>, { payload }: any) {
-        patchState({ username: payload });
+        patchState({ login: payload });
     }
 }
